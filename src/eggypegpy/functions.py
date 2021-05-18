@@ -40,15 +40,29 @@ def translate_word(word):
                     translation += "egg" + letter
                 translation += letter
 
+    # Add punctuation back to word
+    front_punctuation = ""
+    for char in word:
+        if char in punctuation:
+            front_punctuation += char
+        else:
+            break
+    end_punctuation = ""
+    for char in reversed(word):
+        if char in punctuation:
+            end_punctuation = char + end_punctuation
+        else:
+            break
+
     # if word is all uppercase, return the translation that way
     if word.strip(punctuation).isupper() and not len(word) == 1:
-        return translation.upper()
+        return front_punctuation + translation.upper() + end_punctuation
 
     # if word is capitalized, return the translation that way
     if word.strip(punctuation)[0].isupper():
-        return translation.capitalize()
+        return front_punctuation + translation.capitalize() + end_punctuation
 
-    return translation
+    return front_punctuation + translation + end_punctuation
 
 
 def translate_text(text):
