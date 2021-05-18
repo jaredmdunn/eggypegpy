@@ -49,3 +49,21 @@ def translate_word(word):
         return translation.capitalize()
 
     return translation
+
+
+def translate_text(text):
+    """Translate English text into Eggy Peggy.
+
+    Args:
+        text (string): The English text to translate.
+
+    Returns:
+        [string]: The translated text in Eggy Peggy.
+    """
+    new_text = text.strip()
+
+    translation = ""
+    for word in new_text.split():
+        translation += translate_word(word) + " "
+
+    return translation.strip()
