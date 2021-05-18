@@ -1,4 +1,4 @@
-from eggypegpy.functions import translate_word
+from eggypegpy.functions import translate_word, translate_text
 
 
 def test_translate_word():
@@ -8,3 +8,7 @@ def test_translate_word():
     assert translate_word("yellow") == "yeggelleggow"
     assert translate_word("a") == "egga"
     assert translate_word("I") == "Eggi"
+
+
+def test_translate_text():
+    assert translate_text("Hello World") == "Heggelleggo Weggorld"
