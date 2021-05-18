@@ -12,3 +12,4 @@ def test_translate_word():
 
 def test_translate_text():
     assert translate_text("Hello World") == "Heggelleggo Weggorld"
+    assert translate_text("Hello, World!") == "Heggelleggo, Weggorld!"
